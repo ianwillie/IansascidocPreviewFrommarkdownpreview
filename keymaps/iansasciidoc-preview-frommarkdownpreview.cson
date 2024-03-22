@@ -1,0 +1,18 @@
+'atom-text-editor':
+  'ctrl-alt-shift-m': 'iansasciidoc-preview-frommarkdownpreview:toggle'
+
+'.platform-darwin .iansasciidoc-preview-frommarkdownpreview':
+  'cmd-a': 'iansasciidoc-preview-frommarkdownpreview:select-all'
+  'cmd-+': 'iansasciidoc-preview-frommarkdownpreview:zoom-in'
+  'cmd-=': 'iansasciidoc-preview-frommarkdownpreview:zoom-in'
+  'cmd--': 'iansasciidoc-preview-frommarkdownpreview:zoom-out'
+  'cmd-_': 'iansasciidoc-preview-frommarkdownpreview:zoom-out'
+  'cmd-0': 'iansasciidoc-preview-frommarkdownpreview:reset-zoom'
+
+'.platform-win32 .iansasciidoc-preview-frommarkdownpreview, .platform-linux .iansasciidoc-preview-frommarkdownpreview':
+  'ctrl-a': 'iansasciidoc-preview-frommarkdownpreview:select-all'
+  'ctrl-+': 'iansasciidoc-preview-frommarkdownpreview:zoom-in'
+  'ctrl-=': 'iansasciidoc-preview-frommarkdownpreview:zoom-in'
+  'ctrl--': 'iansasciidoc-preview-frommarkdownpreview:zoom-out'
+  'ctrl-_': 'iansasciidoc-preview-frommarkdownpreview:zoom-out'
+  'ctrl-0': 'iansasciidoc-preview-frommarkdownpreview:reset-zoom'

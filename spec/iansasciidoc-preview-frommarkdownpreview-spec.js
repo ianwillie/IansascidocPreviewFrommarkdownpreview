@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs-plus')
 const temp = require('temp').track()
-const MarkdownPreviewView = require('../lib/markdown-preview-view')
+const IansasciidocPreviewFrommarkdownpreviewView = require('../lib/iansasciidoc-preview-frommarkdownpreview-view')
 const { TextEditor } = require('atom')
 const TextMateLanguageMode = new TextEditor().getBuffer().getLanguageMode()
   .constructor
@@ -20,7 +20,7 @@ describe('Markdown Preview', function () {
     jasmine.useRealClock()
     jasmine.attachToDOM(atom.views.getView(atom.workspace))
 
-    waitsForPromise(() => atom.packages.activatePackage('markdown-preview'))
+    waitsForPromise(() => atom.packages.activatePackage('iansasciidoc-preview-frommarkdownpreview'))
 
     waitsForPromise(() => atom.packages.activatePackage('language-gfm'))
 
@@ -42,7 +42,7 @@ describe('Markdown Preview', function () {
     )
 
     runs(() => {
-      expect(preview).toBeInstanceOf(MarkdownPreviewView)
+      expect(preview).toBeInstanceOf(IansasciidocPreviewFrommarkdownpreviewView)
       expect(preview.getPath()).toBe(
         atom.workspace.getActivePaneItem().getPath()
       )
@@ -55,7 +55,7 @@ describe('Markdown Preview', function () {
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -73,7 +73,7 @@ describe('Markdown Preview', function () {
         runs(() =>
           atom.commands.dispatch(
             atom.workspace.getActiveTextEditor().getElement(),
-            'markdown-preview:toggle'
+            'iansasciidoc-preview-frommarkdownpreview:toggle'
           )
         )
         expectPreviewInSplitPane()
@@ -86,7 +86,7 @@ describe('Markdown Preview', function () {
         runs(() =>
           atom.commands.dispatch(
             atom.workspace.getActiveTextEditor().getElement(),
-            'markdown-preview:toggle'
+            'iansasciidoc-preview-frommarkdownpreview:toggle'
           )
         )
         expectPreviewInSplitPane()
@@ -99,7 +99,7 @@ describe('Markdown Preview', function () {
         runs(() =>
           atom.commands.dispatch(
             atom.workspace.getActiveTextEditor().getElement(),
-            'markdown-preview:toggle'
+            'iansasciidoc-preview-frommarkdownpreview:toggle'
           )
         )
         expectPreviewInSplitPane()
@@ -112,7 +112,7 @@ describe('Markdown Preview', function () {
         runs(() =>
           atom.commands.dispatch(
             atom.workspace.getActiveTextEditor().getElement(),
-            'markdown-preview:toggle'
+            'iansasciidoc-preview-frommarkdownpreview:toggle'
           )
         )
         expectPreviewInSplitPane()
@@ -126,7 +126,7 @@ describe('Markdown Preview', function () {
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -135,7 +135,7 @@ describe('Markdown Preview', function () {
     it('closes the existing preview when toggle is triggered a second time on the editor', function () {
       atom.commands.dispatch(
         atom.workspace.getActiveTextEditor().getElement(),
-        'markdown-preview:toggle'
+        'iansasciidoc-preview-frommarkdownpreview:toggle'
       )
 
       const [editorPane, previewPane] = atom.workspace.getCenter().getPanes()
@@ -149,7 +149,7 @@ describe('Markdown Preview', function () {
 
       atom.commands.dispatch(
         editorPane.getActiveItem().getElement(),
-        'markdown-preview:toggle'
+        'iansasciidoc-preview-frommarkdownpreview:toggle'
       )
       expect(previewPane.getActiveItem()).toBeUndefined()
     })
@@ -228,7 +228,7 @@ describe('Markdown Preview', function () {
 
       describe('when the liveUpdate config is set to false', function () {
         it('only re-renders the markdown when the editor is saved, not when the contents are modified', function () {
-          atom.config.set('markdown-preview.liveUpdate', false)
+          atom.config.set('iansasciidoc-preview-frommarkdownpreview.liveUpdate', false)
 
           const didStopChangingHandler = jasmine.createSpy(
             'didStopChangingHandler'
@@ -270,7 +270,7 @@ describe('Markdown Preview', function () {
         )
 
         runs(() => {
-          expect(preview).toBeInstanceOf(MarkdownPreviewView)
+          expect(preview).toBeInstanceOf(IansasciidocPreviewFrommarkdownpreviewView)
           expect(preview.getPath()).toBe(
             atom.workspace.getActivePaneItem().getPath()
           )
@@ -356,7 +356,7 @@ describe('Markdown Preview', function () {
         )
 
         runs(() => {
-          expect(preview).toBeInstanceOf(MarkdownPreviewView)
+          expect(preview).toBeInstanceOf(IansasciidocPreviewFrommarkdownpreviewView)
           expect(preview.getPath()).toBe(
             atom.workspace.getActivePaneItem().getPath()
           )
@@ -369,7 +369,7 @@ describe('Markdown Preview', function () {
     it('opens a preview editor and watches the file for changes', function () {
       waitsForPromise('atom.workspace.open promise to be resolved', () =>
         atom.workspace.open(
-          `markdown-preview://${atom.project
+          `iansasciidoc-preview-frommarkdownpreview://${atom.project
             .getDirectories()[0]
             .resolve('subdir/file.markdown')}`
         )
@@ -377,7 +377,7 @@ describe('Markdown Preview', function () {
 
       runs(() => {
         preview = atom.workspace.getActivePaneItem()
-        expect(preview).toBeInstanceOf(MarkdownPreviewView)
+        expect(preview).toBeInstanceOf(IansasciidocPreviewFrommarkdownpreviewView)
 
         spyOn(preview, 'renderMarkdownText')
         preview.file.emitter.emit('did-change')
@@ -392,7 +392,7 @@ describe('Markdown Preview', function () {
 
   describe("when the editor's grammar it not enabled for preview", function () {
     it('does not open the markdown preview', function () {
-      atom.config.set('markdown-preview.grammars', [])
+      atom.config.set('iansasciidoc-preview-frommarkdownpreview.grammars', [])
 
       waitsForPromise(() => atom.workspace.open('subdir/file.markdown'))
 
@@ -400,7 +400,7 @@ describe('Markdown Preview', function () {
         spyOn(atom.workspace, 'open').andCallThrough()
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
         expect(atom.workspace.open).not.toHaveBeenCalled()
       })
@@ -415,7 +415,7 @@ describe('Markdown Preview', function () {
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
 
@@ -439,7 +439,7 @@ describe('Markdown Preview', function () {
     })
   })
 
-  describe('when the URI opened does not have a markdown-preview protocol', function () {
+  describe('when the URI opened does not have a iansasciidoc-preview-frommarkdownpreview protocol', function () {
     it('does not throw an error trying to decode the URI (regression)', function () {
       waitsForPromise(() => atom.workspace.open('%'))
 
@@ -447,57 +447,57 @@ describe('Markdown Preview', function () {
     })
   })
 
-  describe('markdown-preview:toggle', function () {
+  describe('iansasciidoc-preview-frommarkdownpreview:toggle', function () {
     beforeEach(() =>
       waitsForPromise(() => atom.workspace.open('code-block.md'))
     )
 
-    it('does not exist for text editors that are not set to a grammar defined in `markdown-preview.grammars`', function () {
-      atom.config.set('markdown-preview.grammars', ['source.weird-md'])
+    it('does not exist for text editors that are not set to a grammar defined in `iansasciidoc-preview-frommarkdownpreview.grammars`', function () {
+      atom.config.set('iansasciidoc-preview-frommarkdownpreview.grammars', ['source.weird-md'])
       const editorElement = atom.workspace.getActiveTextEditor().getElement()
       const commands = atom.commands
         .findCommands({ target: editorElement })
         .map(command => command.name)
-      expect(commands).not.toContain('markdown-preview:toggle')
+      expect(commands).not.toContain('iansasciidoc-preview-frommarkdownpreview:toggle')
     })
 
-    it('exists for text editors that are set to a grammar defined in `markdown-preview.grammars`', function () {
-      atom.config.set('markdown-preview.grammars', ['source.gfm'])
+    it('exists for text editors that are set to a grammar defined in `iansasciidoc-preview-frommarkdownpreview.grammars`', function () {
+      atom.config.set('iansasciidoc-preview-frommarkdownpreview.grammars', ['source.gfm'])
       const editorElement = atom.workspace.getActiveTextEditor().getElement()
       const commands = atom.commands
         .findCommands({ target: editorElement })
         .map(command => command.name)
-      expect(commands).toContain('markdown-preview:toggle')
+      expect(commands).toContain('iansasciidoc-preview-frommarkdownpreview:toggle')
     })
 
     it('updates whenever the list of grammars changes', function () {
       // Last two tests combined
-      atom.config.set('markdown-preview.grammars', ['source.gfm', 'text.plain'])
+      atom.config.set('iansasciidoc-preview-frommarkdownpreview.grammars', ['source.gfm', 'text.plain'])
       const editorElement = atom.workspace.getActiveTextEditor().getElement()
       let commands = atom.commands
         .findCommands({ target: editorElement })
         .map(command => command.name)
-      expect(commands).toContain('markdown-preview:toggle')
+      expect(commands).toContain('iansasciidoc-preview-frommarkdownpreview:toggle')
 
-      atom.config.set('markdown-preview.grammars', [
+      atom.config.set('iansasciidoc-preview-frommarkdownpreview.grammars', [
         'source.weird-md',
         'text.plain'
       ])
       commands = atom.commands
         .findCommands({ target: editorElement })
         .map(command => command.name)
-      expect(commands).not.toContain('markdown-preview:toggle')
+      expect(commands).not.toContain('iansasciidoc-preview-frommarkdownpreview:toggle')
     })
   })
 
-  describe('when markdown-preview:copy-html is triggered', function () {
+  describe('when iansasciidoc-preview-frommarkdownpreview:copy-html is triggered', function () {
     it('copies the HTML to the clipboard', function () {
       waitsForPromise(() => atom.workspace.open('subdir/simple.md'))
 
       waitsForPromise(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:copy-html'
+          'iansasciidoc-preview-frommarkdownpreview:copy-html'
         )
       )
 
@@ -516,7 +516,7 @@ describe('Markdown Preview', function () {
       waitsForPromise(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:copy-html'
+          'iansasciidoc-preview-frommarkdownpreview:copy-html'
         )
       )
 
@@ -531,14 +531,14 @@ describe('Markdown Preview', function () {
       beforeEach(function () {
         waitsForPromise(() => atom.packages.activatePackage('language-ruby'))
 
-        waitsForPromise(() => atom.packages.activatePackage('markdown-preview'))
+        waitsForPromise(() => atom.packages.activatePackage('iansasciidoc-preview-frommarkdownpreview'))
 
         waitsForPromise(() => atom.workspace.open('subdir/file.markdown'))
 
         waitsForPromise(() =>
           atom.commands.dispatch(
             atom.workspace.getActiveTextEditor().getElement(),
-            'markdown-preview:copy-html'
+            'iansasciidoc-preview-frommarkdownpreview:copy-html'
           )
         )
 
@@ -597,7 +597,7 @@ describe('Markdown Preview', function () {
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -618,7 +618,7 @@ world\
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -638,7 +638,7 @@ world\
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -653,7 +653,7 @@ world\
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -678,7 +678,7 @@ world\
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -692,14 +692,14 @@ world\
   })
 
   describe('GitHub style markdown preview', function () {
-    beforeEach(() => atom.config.set('markdown-preview.useGitHubStyle', false))
+    beforeEach(() => atom.config.set('iansasciidoc-preview-frommarkdownpreview.useGitHubStyle', false))
 
     it('renders markdown using the default style when GitHub styling is disabled', function () {
       waitsForPromise(() => atom.workspace.open('subdir/simple.md'))
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -710,13 +710,13 @@ world\
     })
 
     it('renders markdown using the GitHub styling when enabled', function () {
-      atom.config.set('markdown-preview.useGitHubStyle', true)
+      atom.config.set('iansasciidoc-preview-frommarkdownpreview.useGitHubStyle', true)
 
       waitsForPromise(() => atom.workspace.open('subdir/simple.md'))
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -731,7 +731,7 @@ world\
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -739,24 +739,24 @@ world\
       runs(() => {
         expect(preview.element.getAttribute('data-use-github-style')).toBeNull()
 
-        atom.config.set('markdown-preview.useGitHubStyle', true)
+        atom.config.set('iansasciidoc-preview-frommarkdownpreview.useGitHubStyle', true)
         expect(
           preview.element.getAttribute('data-use-github-style')
         ).not.toBeNull()
 
-        atom.config.set('markdown-preview.useGitHubStyle', false)
+        atom.config.set('iansasciidoc-preview-frommarkdownpreview.useGitHubStyle', false)
         expect(preview.element.getAttribute('data-use-github-style')).toBeNull()
       })
     })
   })
 
-  describe('when markdown-preview:save-as-html is triggered', function () {
+  describe('when iansasciidoc-preview-frommarkdownpreview:save-as-html is triggered', function () {
     beforeEach(function () {
       waitsForPromise(() => atom.workspace.open('subdir/simple.markdown'))
       runs(() =>
         atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:toggle'
+          'iansasciidoc-preview-frommarkdownpreview:toggle'
         )
       )
       expectPreviewInSplitPane()
@@ -786,7 +786,7 @@ world\
         })
         return atom.commands.dispatch(
           atom.workspace.getActiveTextEditor().getElement(),
-          'markdown-preview:save-as-html'
+          'iansasciidoc-preview-frommarkdownpreview:save-as-html'
         )
       })
 
@@ -819,7 +819,7 @@ world\
         })
         return atom.commands.dispatch(
           editorPane.getActiveItem().getElement(),
-          'markdown-preview:save-as-html'
+          'iansasciidoc-preview-frommarkdownpreview:save-as-html'
         )
       })
 

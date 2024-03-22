@@ -9,11 +9,11 @@ const fs = require('fs-plus')
 const temp = require('temp').track()
 const url = require('url')
 const { TextEditor } = require('atom')
-const MarkdownPreviewView = require('../lib/markdown-preview-view')
+const IansasciidocPreviewFrommarkdownpreviewView = require('../lib/iansasciidoc-preview-frommarkdownpreview-view')
 const TextMateLanguageMode = new TextEditor().getBuffer().getLanguageMode()
   .constructor
 
-describe('MarkdownPreviewView', function () {
+describe('IansasciidocPreviewFrommarkdownpreviewView', function () {
   let preview = null
 
   beforeEach(function () {
@@ -27,14 +27,14 @@ describe('MarkdownPreviewView', function () {
     const filePath = atom.project
       .getDirectories()[0]
       .resolve('subdir/file.markdown')
-    preview = new MarkdownPreviewView({ filePath })
+    preview = new IansasciidocPreviewFrommarkdownpreviewView({ filePath })
     jasmine.attachToDOM(preview.element)
 
     waitsForPromise(() => atom.packages.activatePackage('language-ruby'))
 
     waitsForPromise(() => atom.packages.activatePackage('language-javascript'))
 
-    waitsForPromise(() => atom.packages.activatePackage('markdown-preview'))
+    waitsForPromise(() => atom.packages.activatePackage('iansasciidoc-preview-frommarkdownpreview'))
   })
 
   afterEach(() => preview.destroy())
@@ -85,11 +85,11 @@ describe('MarkdownPreviewView', function () {
     })
 
     it('does not recreate a preview when the file no longer exists', function () {
-      const filePath = path.join(temp.mkdirSync('markdown-preview-'), 'foo.md')
+      const filePath = path.join(temp.mkdirSync('iansasciidoc-preview-frommarkdownpreview-'), 'foo.md')
       fs.writeFileSync(filePath, '# Hi')
 
       preview.destroy()
-      preview = new MarkdownPreviewView({ filePath })
+      preview = new IansasciidocPreviewFrommarkdownpreviewView({ filePath })
       const serialized = preview.serialize()
       fs.removeSync(filePath)
 
@@ -103,7 +103,7 @@ describe('MarkdownPreviewView', function () {
       waitsForPromise(() => atom.workspace.open('new.markdown'))
 
       runs(function () {
-        preview = new MarkdownPreviewView({
+        preview = new IansasciidocPreviewFrommarkdownpreviewView({
           editorId: atom.workspace.getActiveTextEditor().id
         })
 
@@ -253,11 +253,11 @@ end\
       it("doesn't change the URL when allowUnsafeProtocols is true", function () {
         preview.destroy()
 
-        atom.config.set('markdown-preview.allowUnsafeProtocols', true)
+        atom.config.set('iansasciidoc-preview-frommarkdownpreview.allowUnsafeProtocols', true)
 
         const filePath = path.join(temp.mkdirSync('atom'), 'foo.md')
         fs.writeFileSync(filePath, `![absolute](${filePath})`)
-        preview = new MarkdownPreviewView({ filePath })
+        preview = new IansasciidocPreviewFrommarkdownpreviewView({ filePath })
         jasmine.attachToDOM(preview.element)
 
         waitsForPromise(() => preview.renderMarkdown())
@@ -273,11 +273,11 @@ end\
     it('removes the URL when allowUnsafeProtocols is false', function () {
       preview.destroy()
 
-      atom.config.set('markdown-preview.allowUnsafeProtocols', false)
+      atom.config.set('iansasciidoc-preview-frommarkdownpreview.allowUnsafeProtocols', false)
 
       const filePath = path.join(temp.mkdirSync('atom'), 'foo.md')
       fs.writeFileSync(filePath, `![absolute](${filePath})`)
-      preview = new MarkdownPreviewView({ filePath })
+      preview = new IansasciidocPreviewFrommarkdownpreviewView({ filePath })
       jasmine.attachToDOM(preview.element)
 
       waitsForPromise(() => preview.renderMarkdown())
@@ -300,7 +300,7 @@ end\
   describe('gfm newlines', function () {
     describe('when gfm newlines are not enabled', function () {
       it('creates a single paragraph with <br>', function () {
-        atom.config.set('markdown-preview.breakOnSingleNewline', false)
+        atom.config.set('iansasciidoc-preview-frommarkdownpreview.breakOnSingleNewline', false)
 
         waitsForPromise(() => preview.renderMarkdown())
 
@@ -314,7 +314,7 @@ end\
 
     describe('when gfm newlines are enabled', function () {
       it('creates a single paragraph with no <br>', function () {
-        atom.config.set('markdown-preview.breakOnSingleNewline', true)
+        atom.config.set('iansasciidoc-preview-frommarkdownpreview.breakOnSingleNewline', true)
 
         waitsForPromise(() => preview.renderMarkdown())
 
@@ -329,7 +329,7 @@ end\
 
   describe('yaml front matter', function () {
     it('creates a table with the YAML variables', function () {
-      atom.config.set('markdown-preview.breakOnSingleNewline', true)
+      atom.config.set('iansasciidoc-preview-frommarkdownpreview.breakOnSingleNewline', true)
 
       waitsForPromise(() => preview.renderMarkdown())
 
@@ -374,7 +374,7 @@ end\
       const filePath = atom.project
         .getDirectories()[0]
         .resolve('subdir/code-block.md')
-      preview = new MarkdownPreviewView({ filePath })
+      preview = new IansasciidocPreviewFrommarkdownpreviewView({ filePath })
       // Add to workspace for core:save-as command to be propagated up to the workspace
       waitsForPromise(() => atom.workspace.open(preview))
       runs(() => jasmine.attachToDOM(atom.views.getView(atom.workspace)))
@@ -387,14 +387,14 @@ end\
         selectorText: selector,
         cssText: `${selector} ${css}`
       })
-      const markdownPreviewStyles = [
+      const iansasciidocPreviewFrommarkdownpreviewStyles = [
         {
-          rules: [createRule('.markdown-preview', '{ color: orange; }')]
+          rules: [createRule('.iansasciidoc-preview-frommarkdownpreview', '{ color: orange; }')]
         },
         {
           rules: [
             createRule('.not-included', '{ color: green; }'),
-            createRule('.markdown-preview :host', '{ color: purple; }')
+            createRule('.iansasciidoc-preview-frommarkdownpreview :host', '{ color: purple; }')
           ]
         }
       ]
@@ -402,7 +402,7 @@ end\
       const atomTextEditorStyles = [
         'atom-text-editor .line { color: brown; }\natom-text-editor .number { color: cyan; }',
         'atom-text-editor :host .something { color: black; }',
-        'atom-text-editor .hr { background: url(atom://markdown-preview/assets/hr.png); }'
+        'atom-text-editor .hr { background: url(atom://iansasciidoc-preview-frommarkdownpreview/assets/hr.png); }'
       ]
 
       waitsForPromise(() => preview.renderMarkdown())
@@ -424,7 +424,7 @@ end\
           return options.defaultPath
         })
         spyOn(preview, 'getDocumentStyleSheets').andReturn(
-          markdownPreviewStyles
+          iansasciidocPreviewFrommarkdownpreviewStyles
         )
         spyOn(preview, 'getTextEditorStyles').andReturn(atomTextEditorStyles)
       })
@@ -496,7 +496,7 @@ end\
       const filePath = atom.project
         .getDirectories()[0]
         .resolve('subdir/code-block.md')
-      preview = new MarkdownPreviewView({ filePath })
+      preview = new IansasciidocPreviewFrommarkdownpreviewView({ filePath })
       jasmine.attachToDOM(preview.element)
 
       waitsForPromise(() => preview.renderMarkdown())
@@ -556,18 +556,18 @@ enc\
     })
   })
 
-  describe('when markdown-preview:select-all is triggered', function () {
+  describe('when iansasciidoc-preview-frommarkdownpreview:select-all is triggered', function () {
     it('selects the entire Markdown preview', function () {
       const filePath = atom.project
         .getDirectories()[0]
         .resolve('subdir/code-block.md')
-      const preview2 = new MarkdownPreviewView({ filePath })
+      const preview2 = new IansasciidocPreviewFrommarkdownpreviewView({ filePath })
       jasmine.attachToDOM(preview2.element)
 
       waitsForPromise(() => preview.renderMarkdown())
 
       runs(function () {
-        atom.commands.dispatch(preview.element, 'markdown-preview:select-all')
+        atom.commands.dispatch(preview.element, 'iansasciidoc-preview-frommarkdownpreview:select-all')
         const { commonAncestorContainer } = window.getSelection().getRangeAt(0)
         expect(commonAncestorContainer).toEqual(preview.element)
       })
@@ -575,7 +575,7 @@ enc\
       waitsForPromise(() => preview2.renderMarkdown())
 
       runs(() => {
-        atom.commands.dispatch(preview2.element, 'markdown-preview:select-all')
+        atom.commands.dispatch(preview2.element, 'iansasciidoc-preview-frommarkdownpreview:select-all')
         const selection = window.getSelection()
         expect(selection.rangeCount).toBe(1)
         const { commonAncestorContainer } = selection.getRangeAt(0)
@@ -584,7 +584,7 @@ enc\
     })
   })
 
-  describe('when markdown-preview:zoom-in or markdown-preview:zoom-out are triggered', function () {
+  describe('when iansasciidoc-preview-frommarkdownpreview:zoom-in or iansasciidoc-preview-frommarkdownpreview:zoom-out are triggered', function () {
     it('increases or decreases the zoom level of the markdown preview element', function () {
       jasmine.attachToDOM(preview.element)
 
@@ -592,11 +592,11 @@ enc\
 
       runs(function () {
         const originalZoomLevel = getComputedStyle(preview.element).zoom
-        atom.commands.dispatch(preview.element, 'markdown-preview:zoom-in')
+        atom.commands.dispatch(preview.element, 'iansasciidoc-preview-frommarkdownpreview:zoom-in')
         expect(getComputedStyle(preview.element).zoom).toBeGreaterThan(
           originalZoomLevel
         )
-        atom.commands.dispatch(preview.element, 'markdown-preview:zoom-out')
+        atom.commands.dispatch(preview.element, 'iansasciidoc-preview-frommarkdownpreview:zoom-out')
         expect(getComputedStyle(preview.element).zoom).toBe(originalZoomLevel)
       })
     })

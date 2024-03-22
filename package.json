@@ -1,9 +1,9 @@
 {
-  "name": "markdown-preview",
+  "name": "iansasciidoc-preview-frommarkdownpreview",
   "version": "0.160.2",
   "main": "./lib/main",
-  "description": "Open a rendered version of the Markdown in the current editor with `ctrl-shift-m`.",
-  "repository": "https://github.com/pulsar-edit/pulsar",
+  "description": "Open a rendered version of the Asciidoc in the current editor with `ctrl-shift-m`.",
+  "repository": "",
   "license": "MIT",
   "engines": {
     "atom": "*"
@@ -12,7 +12,7 @@
     "cheerio": "^1.0.0-rc.3",
     "dompurify": "^2.0.17",
     "emoji-images": "^0.1.1",
-    "fs-plus": "^3.0.0",
+    "fs-plus": "^3.1.1",
     "marked": "5.0.3",
     "underscore-plus": "^1.0.0",
     "yaml-front-matter": "^4.1.1"
@@ -21,7 +21,7 @@
     "temp": "^0.8.1"
   },
   "deserializers": {
-    "MarkdownPreviewView": "createMarkdownPreviewView"
+    "IansasciidocPreviewFrommarkdownpreviewView": "createIansasciidocPreviewFrommarkdownpreviewView"
   },
   "configSchema": {
     "breakOnSingleNewline": {
@@ -63,7 +63,7 @@
       "description": "Use the same CSS styles for preview as the ones used on GitHub.com."
     },
     "syntaxHighlightingLanguageIdentifier": {
-      "description": "Syntax Highlighting System to use for code block language identification. See [the README](https://github.com/pulsar-edit/pulsar/tree/master/packages/markdown-preview#readme) for details.",
+      "description": "Syntax Highlighting System to use for code block language identification. See [the README](https://github.com/pulsar-edit/pulsar/tree/master/packages/iansasciidoc-preview-frommarkdownpreview#readme) for details.",
       "type": "string",
       "default": "linguist",
       "enum": [
@@ -86,7 +86,7 @@
       ]
     },
     "customSyntaxHighlightingLanguageIdentifiers": {
-      "description": "Custom comma seperated list of Syntax Language Identifiers to map to any language. See [the README](https://github.com/pulsar-edit/pulsar/tree/master/packages/markdown-preview#readme) for usage.",
+      "description": "Custom comma seperated list of Syntax Language Identifiers to map to any language. See [the README](https://github.com/pulsar-edit/pulsar/tree/master/packages/iansasciidoc-preview-frommarkdownpreview#readme) for usage.",
       "type": "string",
       "default": ""
     }
