@@ -9,6 +9,7 @@
     "atom": "*"
   },
   "dependencies": {
+    "asciidoctor": "^2.2.7",
     "cheerio": "^1.0.0-rc.3",
     "dompurify": "^2.0.17",
     "emoji-images": "^0.1.1",
