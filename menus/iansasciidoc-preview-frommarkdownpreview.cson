@@ -36,3 +36,5 @@ menu: [
     [{label: 'Markdown Preview', command: 'iansasciidoc-preview-frommarkdownpreview:preview-file'}]
   '.tree-view .file .name[data-name$=\\.txt]':
     [{label: 'Markdown Preview', command: 'iansasciidoc-preview-frommarkdownpreview:preview-file'}]
+  '.tree-view .file .name[data-name$=\\.adoc]':
+    [{label: 'Markdown Preview', command: 'iansasciidoc-preview-frommarkdownpreview:preview-file'}]
