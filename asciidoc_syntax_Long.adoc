@@ -1,11 +1,11 @@
 = AsciiDoc Syntax
 :icons: font
 :stem:
-:toc: left
+:toc: 
 :url-docs: https://asciidoctor.org/docs
 :url-gem: https://rubygems.org/gems/asciidoctor
-:styledir: tempZ
-:stylesheet: asciidoctor.css
+// :styledir: tempZ
+// :stylesheet: asciidoctor.css
 
 == AsciiDoc Syntax 9999999999999999888777666
 
