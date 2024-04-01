@@ -6,6 +6,10 @@ It is currently enabled for `.markdown`, `.md`, `.mdown`, `.mkd`, `.mkdown`, `.r
 
 ![iansasciidoc-preview-frommarkdownpreview](https://cloud.githubusercontent.com/assets/378023/10013086/24cad23e-6149-11e5-90e6-663009210218.png)
 
+[click on this link to hash-my-multi-word-header](#my-multi-word-header)
+
+<p><a href="#my-multi-word-header">click on this href= link to hash-my-multi-word-header</a></p>
+
 ## Customize
 
 By default Markdown Preview uses the colors of the active syntax theme. Enable `Use GitHub.com style` in the __package settings__ to make it look closer to how markdown files get rendered on github.com.
@@ -27,6 +31,8 @@ While a verbose specification of Markdown, mostly, ensures the content of Markdo
 A "code block language identifier" is the string you use to tell the Markdown renderer what code is inside a code block of your Markdown document.
 
 Nearly every Markdown rendering system supports different strings to specify your language than each other. `Iansasciidoc-Preview-Frommarkdownpreview` has implemented several valid Language Identifier systems to help ensure that your Markdown will look the same no matter where you publish it!
+
+### My Multi Word Header
 
 In the settings, you can select from a list of different popular Language Identification systems that can then be used in your code blocks. This means that they will still be valid when shipping them to whatever platform of your choice.
 

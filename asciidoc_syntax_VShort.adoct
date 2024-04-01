@@ -12,7 +12,7 @@ You can find the full documentation for the AsciiDoc syntax at {url-docs}.
 
 == Paragraphs
 
-A normal paragraph 
+A normal paragraph
 Line breaks are not preserved.
 
 See https://github.com/pulsar-edit/pulsar/issues/475#issuecomment-1500706206
@@ -20,6 +20,9 @@ See https://github.com/pulsar-edit/pulsar/issues/475#issuecomment-1500706206
 1234567890 abcdefghijklmnopqrstuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ¬!"£$%^&*()_+-= {}[]:;@'~#<,>.?/|\
+
+== Debug Running Pods [[debug_running_pods]]
+
 
 dddEEE +
 123456789112345678921234567893123456789412345678951234567896123456789712345678981234567899123456onload7890
@@ -122,3 +125,6 @@ dddEEE +
 98 +
 99 +
 10 +
+Refer to an ID:
+
+<<debug_running_pods>>

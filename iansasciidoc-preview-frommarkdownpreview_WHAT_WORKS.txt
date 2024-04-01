@@ -1,0 +1,38 @@
+iansasciidoc-preview-frommarkdownpreview_WHAT_WORKS.txt
+
+What does NOT:
+ local crossreferences #mytarget
+    but do not work in MdPreview
+    works in external browser
+ code highlighting  -
+    code highlighting for code sections within .adoc files to be removed from MDP sections as provided by AD.js
+    IMPORTANT: When ctrl-shft-L is used to set grammar to Asciidoc (from language-asciidoc) then when ctrl-shft-P is pressed iansasciidocPreviewFrommarkdownpreview dissapears from the list. So the command ctrl-alt-shft-m no longer exists! source.asciidoc must be added to list: see below.
+        Works with grammar tx, html,gfm, Does not work with C, Ruby, Typescript. asciidoc, auto,
+    In iansasciidocPreviewFrommarkdownpreview setting under Grammar "source.asciidoc" must be added to default list "source.asciidoc, source.gfm, source.litcoffee, text.html.basic, text.md, text.plain, text.plain.null-grammar" then syntax highlighting takes place in  editor with ctrl-shft-L "asciidoc" enabled. Seems to have to be enabled for each extension with ctrl-shft-L, like asciidoc.txt.  However these are recognised "adoc, asc" ADD TO THIS LIST.  Language-asciidoc README.md says "The default file extensions for AsciiDoc files are ad, asc, adoc, asciidoc, and asciidoc.txt". All of these work except asciidoc.txt which seems to be treated as txt.
+
+What DOES WORK
+  Auto update ( if on in setup)
+  All attributes set in adoc header like "":toc: left"
+  External Links
+  keycode for preview toggle ctrl-alt-sift-m  at the moment
+  All asciidoctor.js formatting
+      Callouts <1> <2> etc
+  Convert options & attributes on asciidoctor.convert(text, {...})
+  Save html file & copy to clipboard
+  ctrl-c  copies selected text in preview which appears in clipboard & can be pasted. Ctrl-a selects all text in preview.
+
+
+
+.adoc files not opened on ctrl-ald-shift-m when another asciidoc package is enabled,   but.adoct opens OK. Cantr remember which package   might be ascidoc-preview, or some part of language-adoc.
+
+
+TEST
+  adoc syntax highlight -try ascidoc-preview
+  see if syntax highlight from asciidoc-preview or language-asciidoc could be put in asciidoc-previewFromMDP.
+
+  With language-asciidoc enables asciidoc & "asciidoc hack for properties" appears in Edit>Select grammar,ctrl-shft-L list.
+    In Select grammar if autodetect or asciidoc is selected them ctrl-alt-shft-m does not open .adoc file. But changing the selection it works at once,
+
+  CHECK link operation of markdown-preview in atomV1.60
+
+  Setting iansasciidocPreviewFrommarkdownpreview to use
