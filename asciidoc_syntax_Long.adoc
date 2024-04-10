@@ -156,7 +156,7 @@ See <<idname>> or <<idname,optional text of internal link>>.
 
 xref:document.adoc#idname[Jumps to anchor in another document].
 
-This paragraph has a footnote.footnote:[This is the text of the footnote.]
+This paragraph has a footnote.footnote:[This is the text of the footnote. Scroll to end o doc to see.]
 
 == Lists
 
@@ -279,6 +279,15 @@ listing - an exhibit that features program input, source code, or the contents o
 source - a listing that is embellished with (colorized) syntax highlighting
 ----
 
+[source,ruby]
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----
+
 ```language
 fenced code - a shorthand syntax for the source block
 ```
@@ -338,11 +347,11 @@ comment - content which is not included in the output document
 
 == Multimedia
 
-image::screenshot.png[block image,800,450]
+image::/media/AcerWinData/PhotosEpson/aaaaaaaDCIM/DCIM/XXXTestDigikamFromNikonS9700/TakenOn2024.02.20/tz9020240220172514.JPG[block image,800,450]
 
 Press image:reload.svg[reload,16,opts=interactive] to reload the page.
 
-video::movie.mp4[width=640,start=60,end=140,options=autoplay]
+video::/home/ian/Downloads/IMG_1420.mp4[width=640,start=60,end=140,options=autoplay]
 
 video::aHjpOzsQ9YI[youtube]
 

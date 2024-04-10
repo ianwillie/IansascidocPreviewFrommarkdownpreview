@@ -4,7 +4,7 @@ What does NOT:
  local crossreferences #mytarget
     but do not work in MdPreview
     works in external browser
- code highlighting  -
+ code highlighting  in the previewed asciidoc. Syntax highlighting OK in source editor.
     code highlighting for code sections within .adoc files to be removed from MDP sections as provided by AD.js
     IMPORTANT: When ctrl-shft-L is used to set grammar to Asciidoc (from language-asciidoc) then when ctrl-shft-P is pressed iansasciidocPreviewFrommarkdownpreview dissapears from the list. So the command ctrl-alt-shft-m no longer exists! source.asciidoc must be added to list: see below.
         Works with grammar tx, html,gfm, Does not work with C, Ruby, Typescript. asciidoc, auto,
@@ -13,9 +13,9 @@ What does NOT:
 What DOES WORK
   Auto update ( if on in setup)
   All attributes set in adoc header like "":toc: left"
-  External Links
+  All External Links to including mp4, youtube, png svg etc display.
   keycode for preview toggle ctrl-alt-sift-m  at the moment
-  All asciidoctor.js formatting
+  All asciidoctor.js formatting. Uses asciidoctor.css plus bits from markdown-preview to allow editor scrolling, zoom.
       Callouts <1> <2> etc
   Convert options & attributes on asciidoctor.convert(text, {...})
   Save html file & copy to clipboard
@@ -36,3 +36,33 @@ TEST
   CHECK link operation of markdown-preview in atomV1.60
 
   Setting iansasciidocPreviewFrommarkdownpreview to use
+
+For github pulsar https://github.com/pulsar-edit/pulsar/issues/256  ###################################################  20240408
+@confused-Techie .
+## An update on asciidoc-preview.
+I have followed your suggestion and adapted markdown-preview to preview asciidoc source code.
+In brief, using asciidoctor.js as the renderer virtually everything functions  as expected but extensive changes were needed to the package.
+However, **I would like some advice as to how to proceed**. Basically I have copied the pulsar markdown-preview bundled package and extensively adapted it. This has involved changing much of the code removing chunks that are not relevant, adapting css & styling and making changes where the functionality is contained in asciidoctor.js. All references to markdown have been removed.
+Technically this is a fork but in reality it will end up being a rewrite greatly inspired by markdown-preview and support from yourself and others.
+
+My inclination is to set it up on github as a separate entity rather than a fork of markdown-preview but underlining my great debt to that package. **How would you suggest I proceed?** You have given me valuable advice for this project often before.
+
+Here is a summary of what works so far: magically almost everything. But I have to add that it has taken me a year to learn amongst many other things  js, cofeescript (a bit), git, the intricacies of pulsar (and the confusion caused by sunsetting of much of atom help). On the way I wrote my own preview package https://github.com/ianwillie/ianasciidocpreview-active-editor-info which was a learning exercise really and explored unsuccessfully  extending (atom-)asciidoc-preview which stopped working due to changes in electron versions.
+
+###  What DOES WORK so far  "iansasciidoc-preview-frommarkdownpreview" ( temporary name).
+
+ -  Basically almost everything that works in markdown-preview.
+ - All editor functions like zoom, resize, scroll. Clipboard copying from preview. Editor code highighting using language-asciidoc (settings are very important or preview does not function.)
+ - Auto update ( if turned on in setup) & preview on save (if turned off).
+ - Styling based on asciidoctor.css supplemented to show scrollbars and the like in the preview.
+ - All attributes set in adoc header like:
+   - Table of Contents (:toc: left),
+   - Author details,
+   - Callouts <1> <2>,
+   - Tables,
+   - Preview code highlighting (a bit iffy).
+ - All External Links to external media files display including mp4, youtube, png, svg, jpg.
+   - Internal links & targets are not functional as is the case in markdown-preview.
+ - Unique keycode for preview toggle.
+ - Convert options & attributes on asciidoctor.convert(text, {...}).
+ - Save html file & copy html to clipboard.
