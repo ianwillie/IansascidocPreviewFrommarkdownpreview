@@ -18,6 +18,29 @@ backtick then plus gives monospaced
 `+12345678911234567892123456789312345678941234567895123456789612345678971234567898123456789912345678901234567891+` +
 `+0........1.........2.........3.........4.........5.........6.........7.........8........9.........10........11+` +
 
+<a href="aaaXXXXX">Sections aaaXXXXX</a>
+
+.Some Ruby CodeX
+[source, ruby]
+
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World"
+end
+----
+
+.Some HTML Code
+[source, html]
+
+----
+
+<a href="adfgef">Text Sections adfgef</a>
+----
+
+
+
 
 `+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz+`
 

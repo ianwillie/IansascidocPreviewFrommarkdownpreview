@@ -1,13 +1,14 @@
 = AsciiDoc Syntax
+:safe: safe
 :icons: font
 :stem:
 :toc:
 :doctype: book
-:url-docs: https://asciidoctor.org/docs
-:url-gem: https://rubygems.org/gems/asciidoctor
+//:url-docs: https://asciidoctor.org/docs
+//:url-gem: https://rubygems.org/gems/asciidoctor
 :source-highlighter: highlight.js
-// :styledir: tempZ
-// :stylesheet: asciidoctor.css
+:styledir: tempZ
+:stylesheet: asciidoctor.css
 
 
 == AsciiDoc Syntax 9999999999999999888777666
@@ -15,19 +16,27 @@
 THis is a very long line to test the horizontal width & scroll so that we can see just where the pane ends at the bottom cos there ought to be a scroll bar there I think. However, it may be necessary to have a line wi not blanks in it we will see when we test it now.
 backtick then plus gives monospaced
 
-<a href="#_sections">Sections aaaXXXXX</a>
+<a href="aaaXXXXX">Sections aaaXXXXX</a>
 
-.Some Ruby Code
-[source,html]
+.Some Ruby CodeX
+[source, ruby]
 
 ----
-<a href="#_sections">Sections aaaXXXXX</a>
 require 'sinatra'
 
 get '/hi' do
   "Hello World"
 end
 ----
+
+.Some HTML Code
+[source, html]
+
+----
+
+<a href="adfgef">Text Sections adfgef</a>
+----
+
 
 
 `+12345678911234567892123456789312345678941234567895123456789612345678971234567898123456789912345678901234567891123456789212345678931234567894123456789512345678961234567897123456789812345678991234567890+` +
@@ -365,5 +374,5 @@ video::300817511[vimeo]
 // page break
 <<<
 
-This the is END of file
-http://localhost:35729/livereload.js
+This the is END of file +
+Look at Middleman website here "http://localhost:35729/livereload.js"

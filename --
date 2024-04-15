@@ -1,17 +1,10 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <meta charset="utf-8" />
-      <title>asciidoc_syntax_Long</title>
-  </head> 
-  <body >
-
-
-
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.22">
+<meta name="generator" content="Asciidoctor 2.0.20">
 <title>AsciiDoc Syntax</title>
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -442,40 +435,229 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
-
-
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+</head>
+<body class="book">
 <div id="header">
 <h1>AsciiDoc Syntax</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_asciidoc_syntax_9999999999999999888777666">AsciiDoc Syntax 9999999999999999888777666</a></li>
-<li><a href="#_paragraphs">Paragraphs</a></li>
-<li><a href="#_text_formatting">Text Formatting</a></li>
-<li><a href="#_attributes">Attributes</a></li>
-<li><a href="#_links">Links</a></li>
-<li><a href="#_anchors">Anchors</a></li>
-<li><a href="#_lists">Lists</a>
-<ul class="sectlevel2">
-<li><a href="#_unordered">Unordered</a></li>
-<li><a href="#_ordered">Ordered</a></li>
-<li><a href="#_checklist">Checklist</a></li>
-<li><a href="#_callout">Callout</a></li>
-<li><a href="#_description">Description</a></li>
-</ul>
-</li>
-<li><a href="#_document_structure">Document Structure</a>
-<ul class="sectlevel2">
-<li><a href="#_header">Header</a></li>
-<li><a href="#_sections">Sections</a></li>
-<li><a href="#_includes">Includes</a></li>
-</ul>
-</li>
-<li><a href="#_blocks">Blocks</a></li>
-<li><a href="#_tables">Tables</a></li>
-<li><a href="#_multimedia">Multimedia</a></li>
-<li><a href="#_breaks">Breaks</a></li>
 </ul>
 </div>
 </div>
@@ -484,8 +666,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_asciidoc_syntax_9999999999999999888777666">AsciiDoc Syntax 9999999999999999888777666</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>THis is a very long line to test the horizontal width &amp; scroll so that we can see just where the pane ends at the bottom cos there ought to be a scroll bar there I think. However, it may be necessary to have a line wi not blanks in it we will see when we test it now.
-backtick then plus gives monospaced</p>
+<p>THis is a very  line to test</p>
 </div>
 <div class="paragraph">
 <p>&lt;a href="aaaXXXXX"&gt;Sections aaaXXXXX&lt;/a&gt;</p>
@@ -493,576 +674,23 @@ backtick then plus gives monospaced</p>
 <div class="listingblock">
 <div class="title">Some Ruby CodeX</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">require 'sinatra'
+<pre class="rouge highlight"><code data-lang="ruby"><span class="nb">require</span> <span class="s1">'sinatra'</span>
 
-get '/hi' do
-  "Hello World"
-end</code></pre>
+<span class="n">get</span> <span class="s1">'/hi'</span> <span class="k">do</span>
+  <span class="s2">"Hello World"</span>
+<span class="k">end</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Some HTML Code</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;a href="adfgef"&gt;Text Sections adfgef&lt;/a&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"adfgef"</span><span class="nt">&gt;</span>Text Sections adfgef<span class="nt">&lt;/a&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p><code>12345678911234567892123456789312345678941234567895123456789612345678971234567898123456789912345678901234567891123456789212345678931234567894123456789512345678961234567897123456789812345678991234567890</code><br>
 <code>0........1.........2.........3.........4.........5.........6.........7.........8........9.........10........11........12........13........14........15........16........17........18........19........20</code><br></p>
 </div>
-<div class="paragraph">
-<p><code>12345678911234567892123456789312345678941234567895123456789612345678971234567898123456789912345678901234567891</code><br>
-<code>0........1.........2.........3.........4.........5.........6.........7.........8........9.........10........11</code><br></p>
-</div>
-<div class="paragraph">
-<p><code>zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</code></p>
-</div>
-<div class="paragraph">
-<p>These letters and symbols following are to see if an error in rendering ever occurs.
-It was noted that the digit 9 was being rendered by pulsar html-preview as
-a single "long dash" character. Probaby this character —
-Hold down together Ctrl-Shift-U followed by 2014 followed by space or entry
-which generates —
-No one other than ianwillie could find this.
-It occured for weeks and after Atom-Dark theme was present but vanished after installin g
-Atom-Light and immediately reinstalling Atom-Dark.
-See <a href="https://github.com/pulsar-edit/pulsar/issues/475#issuecomment-1500706206" class="bare">https://github.com/pulsar-edit/pulsar/issues/475#issuecomment-1500706206</a></p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/pulsar-edit/pulsar/issues/475#issuecomment-1500706206" class="bare">https://github.com/pulsar-edit/pulsar/issues/475#issuecomment-1500706206</a></p>
-</div>
-<div class="paragraph">
-<p>1234567890 abcdefghijklmnopqrstuvwxyz
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-¬!"£$%^&amp;*()_+-= {}[]:;@'~#&lt;,&gt;.?/|\</p>
-</div>
-<div class="paragraph">
-<p>This is a more or less complete copy of an early asciidoctor syntax guide asciidoc_syntax.adoc which is handy for checking how it is rendered.
-At the end it includes some multimedia which should work OK but most of the urls are likely not to work unless the base URL is attended to.
-Current documentation can be found at <a href="https://asciidoctor.org/docs/" class="bare">https://asciidoctor.org/docs/</a></p>
-</div>
-<div class="paragraph">
-<p>A brief reference of the most commonly used AsciiDoc syntax.
-Test the datess 1975.
-You can find the full documentation for the AsciiDoc syntax at {url-docs}.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_paragraphs">Paragraphs</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A normal paragraph.
-Line breaks are not preserved.</p>
-</div>
-<div class="paragraph">
-<p>A blank line separates paragraphs.</p>
-</div>
-<div class="paragraph">
-<p>This paragraph is marked with the <code>hardbreaks</code> option.<br>
-Notice how line breaks are now preserved.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>An indented (literal) paragraph disables text formatting,
-preserves spaces and line breaks, and is displayed in a
-monospaced font.</pre>
-</div>
-</div>
-<div id="id" class="sidebarblock role">
-<div class="content">
-Adding a style, ID, and/or role gives a paragraph (or block) special meaning, like this sidebar.
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-An admonition paragraph, like this note, grabs the reader’s attention.
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Convert this document using the <code>asciidoctor</code> command to see the output produced from it.
-</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_text_formatting">Text Formatting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<div class="title">Constrained (applied at word boundaries)</div>
-<p><strong>strong importance</strong> (aka bold)<br>
-<em>stress emphasis</em> (aka italic)<br>
-<code>monospaced</code> (aka typewriter text)<br>
-“double” and ‘single’ typographic quotes<br>
-passthrough text (substitutions disabled)<br>
-<code>literal text</code> (monospaced with substitutions disabled)<br>
-a <mark>mark</mark> to remember (highlighted for notation)</p>
-</div>
-<div class="paragraph">
-<div class="title">Unconstrained (applied anywhere)</div>
-<p><strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate, and <strong>D</strong>elete (CRUD)<br>
-fan<em>freakin</em>tastic<br>
-<code>mono</code>culture<br>
-<mark>mark</mark>up your text</p>
-</div>
-<div class="paragraph">
-<div class="title">Replacements</div>
-<p>A long time ago in a galaxy far, far away…​<br>
-© 1976 Arty Artisan<br>
-I believe I shall—​no, actually I won’t.</p>
-</div>
-<div class="paragraph">
-<div class="title">ID and roles for phrases</div>
-<p><span class="line-through">delete me</span><br>
-the <em class="path">images</em> directory<br>
-a <strong id="wibble" class="term">wibble</strong> does wobble</p>
-</div>
-<div class="paragraph">
-<div class="title">Macros</div>
-<p>The European <span class="icon blue"><i class="fa fa-flag"></i></span> is blue &amp; contains ************ arranged in a <span class="icon yellow"><i class="fa fa-circle-o"></i></span>.<br>
-The -&gt; operator is often referred to as the stabby lambda.<br>
-Since <code>++</code> has strong priority in AsciiDoc, you can rewrite C++ ⇒ C++.<br>
-\$sqrt(4) = 2\$</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_attributes">Attributes</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>// define attributes in the document header; must be flush with left margin
-:name: value</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can download and install Asciidoctor 2.0.22 from {url-gem}.
-C++ is not required, only Ruby.
-Use a leading backslash to output a word enclosed in curly braces, like {name}.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_links">Links</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://example.org/page">A webpage. THIS WORKS</a><br>
-<a href="../media/AcerWinData/github_from_home/CloneOfianasciidocpreview-active-editor-info-20230915_ChromeZoomWiTransformFactorInFile/TEST_textfile.txt">A local file</a><br>
-<a href="atom://core/open/file?filename=" home="" ian="" websites="" atom.io_flightmanual1.57fromatom-flight-manual-archive.github.io="" atom-flight-manual-archive.github.io="" index.html""="">A local file atom flight manual</a><br>
-<a href="atom://core/open/file?filename=" media="" acerwindata="" github_from_home="" cloneofianasciidocpreview-active-editor-info-20230915_chromezoomwitransformfactorinfile="" test_textfile.txt""="">A local file TEST_textfile.txt wi full path</a><br>
-<a href="atom://core/open/file?filename=" test_textfile.txt""="">A local file TEST_textfile.txt wi just filename. Open unknownfile</a><br>
-<a href="document.html">A sibling document</a><br>
-<a href="mailto:hello@example.org">Email to say hello!</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_anchors">Anchors</h2>
-<div class="sectionbody">
-<div id="idname" class="paragraph">
-<p>A paragraph (or any block) with an anchor (aka ID) and reftext.</p>
-</div>
-<div class="paragraph">
-<p>See <a href="#idname">reference text</a> or <a href="#idname">optional text of internal link</a>.</p>
-</div>
-<div class="paragraph">
-<p><a href="document.html#idname">Jumps to anchor in another document</a>.</p>
-</div>
-<div class="paragraph">
-<p>This paragraph has a footnote.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_lists">Lists</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_unordered">Unordered</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>level 1</p>
-<div class="ulist">
-<ul>
-<li>
-<p>level 2</p>
-<div class="ulist">
-<ul>
-<li>
-<p>level 3</p>
-<div class="ulist">
-<ul>
-<li>
-<p>level 4</p>
-<div class="ulist">
-<ul>
-<li>
-<p>etc.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>back at level 1</p>
-<div class="paragraph">
-<p>Attach a block or paragraph to a list item using a list continuation (which you can enclose in an open block).</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist circle">
-<div class="title">Some Authors</div>
-<ul class="circle">
-<li>
-<p>Edgar Allen Poe</p>
-</li>
-<li>
-<p>Sheri S. Tepper</p>
-</li>
-<li>
-<p>Bill Bryson</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ordered">Ordered</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Step 1</p>
-</li>
-<li>
-<p>Step 2</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Step 2a</p>
-</li>
-<li>
-<p>Step 2b</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Step 3</p>
-</li>
-</ol>
-</div>
-<div class="olist upperroman">
-<div class="title">Remember your Roman numerals?</div>
-<ol class="upperroman" type="I">
-<li>
-<p>is one</p>
-</li>
-<li>
-<p>is two</p>
-</li>
-<li>
-<p>is three</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_checklist">Checklist</h3>
-<div class="ulist checklist">
-<ul class="checklist">
-<li>
-<p><i class="fa fa-check-square-o"></i> checked</p>
-</li>
-<li>
-<p><i class="fa fa-square-o"></i> not checked</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_callout">Callout</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">puts 'Hello, World!' <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tbody><tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Prints <code>Hello, World!</code> to the console.</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_description">Description</h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">first term</dt>
-<dd>
-<p>description of first term</p>
-</dd>
-<dt class="hdlist1">second term</dt>
-<dd>
-<p>description of second term</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_document_structure">Document Structure</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_header">Header</h3>
-<div class="literalblock">
-<div class="content">
-<pre>// header must be flush with left margin
-= Document Title
-Author Name &lt;author@example.org&gt;
-v1.0, 2019-01-01</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_sections">Sections</h3>
-<div class="literalblock">
-<div class="content">
-<pre>// must be flush with left margin
-= Document Title (Level 0)
-== Level 1
-=== Level 2
-==== Level 3
-===== Level 4
-====== Level 5
-== Back at Level 1</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_includes">Includes</h3>
-<div class="literalblock">
-<div class="content">
-<pre>// must be flush with left margin
-include::basics.adoc[]</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>// define -a allow-uri-read to allow content to be read from URI
-include::https://example.org/installation.adoc[]</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_blocks">Blocks</h2>
-<div class="sectionbody">
-<div class="openblock">
-<div class="content">
-<div class="paragraph">
-<p>open - a general-purpose content wrapper; useful for enclosing content to attach to a list item</p>
-</div>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>admonition - a notice for the reader, ranging in severity from a tip to an alert</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>example - a demonstration of the concept being documented</p>
-</div>
-</div>
-</div>
-<details>
-<summary class="title">Toggle Me</summary>
-<div class="content">
-<div class="paragraph">
-<p>collapsible - these details are revealed by clicking the title</p>
-</div>
-</div>
-</details>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>sidebar - auxiliary content that can be read independently of the main content</p>
-</div>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>literal - an exhibit that features program output</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>listing - an exhibit that features program input, source code, or the contents of a file</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-language hljs" data-lang="language">source - a listing that is embellished with (colorized) syntax highlighting</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">require 'sinatra'
-
-get '/hi' do
-  "Hello World!"
-end</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-language hljs" data-lang="language">fenced code - a shorthand syntax for the source block</code></pre>
-</div>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>quote - a quotation or excerpt; attribution with title of source are optional</p>
-</div>
-</blockquote>
-<div class="attribution">
-— attribution<br>
-<cite>citetitle</cite>
-</div>
-</div>
-<div class="verseblock">
-<pre class="content">verse - a literary excerpt, often a poem; attribution with title of source are optional</pre>
-<div class="attribution">
-— attribution<br>
-<cite>citetitle</cite>
-</div>
-</div>
-pass - content passed directly to the output document; often raw HTML
-<div class="stemblock">
-<div class="content">
-\$x = y^2\$
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_tables">Tables</h2>
-<div class="sectionbody">
-<table class="tableblock frame-ends grid-all" style="width: 50%;">
-<caption class="title">Table 1. Table Attributes</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-right valign-top">Attribute Name</th>
-<th class="tableblock halign-left valign-top">Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="tableblock halign-right valign-top"><p class="tableblock">options</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">header,footer,autowidth</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-right valign-top"><p class="tableblock">cols</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">colspec[;colspec;…​]</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-right valign-top"><p class="tableblock">grid</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">all | cols | rows | none</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-right valign-top"><p class="tableblock">frame</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">all | sides | ends | none</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-right valign-top"><p class="tableblock">stripes</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">all | even | odd | none</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-right valign-top"><p class="tableblock">width</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(0%..100%)</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-right valign-top"><p class="tableblock">format</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">psv | csv | dsv</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_multimedia">Multimedia</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="/media/AcerWinData/PhotosEpson/aaaaaaaDCIM/DCIM/XXXTestDigikamFromNikonS9700/TakenOn2024.02.20/tz9020240220172514.JPG" alt="block image" width="800" height="450">
-</div>
-</div>
-<div class="paragraph">
-<p>Press <span class="image"><object type="image/svg+xml" data="reload.svg" width="16"><span class="alt">reload</span></object></span> to reload the page.</p>
-</div>
-<div class="videoblock">
-<div class="content">
-<video src="/home/ian/Downloads/IMG_1420.mp4#t=60,140" width="640" autoplay="" controls="">
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
-<div class="videoblock">
-<div class="content">
-<iframe src="https://www.youtube.com/embed/aHjpOzsQ9YI?rel=0" frameborder="0" allowfullscreen=""></iframe>
-</div>
-</div>
-<div class="videoblock">
-<div class="content">
-<iframe src="https://player.vimeo.com/video/300817511" frameborder="0" allowfullscreen=""></iframe>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_breaks">Breaks</h2>
-<div class="sectionbody">
 <hr>
 <div style="page-break-after: always;"></div>
 <div class="paragraph">
@@ -1072,24 +700,11 @@ Look at Middleman website here "http://localhost:35729/livereload.js"</p>
 </div>
 </div>
 </div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. This is the text of the footnote. Scroll to end o doc to see.
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-04-15 13:17:27 +0100
+Last updated 2024-04-15 15:21:43 +0100
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
-<script>
-if (!hljs.initHighlighting.called) {
-  hljs.initHighlighting.called = true
-  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
-}
-</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   messageStyle: "none",
@@ -1114,7 +729,5 @@ MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
 })
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
-
-
-  </body>
+</body>
 </html>

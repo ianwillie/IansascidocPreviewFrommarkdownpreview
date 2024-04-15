@@ -37,6 +37,25 @@ TEST
 
   Setting iansasciidocPreviewFrommarkdownpreview to use
 
+####################  highlighting ptoblem in preview but OK in browser ###########
+Maybe clue here:https://stackoverflow.com/questions/63115206/highlight-js-doesnt-highlight-on-markup-load-from-javascript-event
+https://github.com/asciidoctor/asciidoctor/issues/1900   YES 
+
+<code class="language-ruby hljs" data-lang="ruby">require 'sinatra'
+
+get '/hi' do
+  "Hello World"
+end</code>
+
+The following scriptis called by asciidoctor.js and will be executed OK in browser, but will not be allowed to execute inpulsar-edit. No scripts are allowed.
+line 499-504 in /media/AcerWinData/github_from_home/IansascidocPreviewFrommarkdownpreview/asciidoc_syntax_highlightingTEST.adoc.html
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
+
 For github pulsar https://github.com/pulsar-edit/pulsar/issues/256  ###################################################  20240408
 @confused-Techie .
 ## An update on asciidoc-preview.

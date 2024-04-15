@@ -9,6 +9,7 @@
     "atom": "*"
   },
   "dependencies": {
+    "@asciidoctor/reveal.js": "^5.1.0",
     "asciidoctor": "^2.2.7",
     "cheerio": "^1.0.0-rc.3",
     "dompurify": "^2.0.17",
@@ -16,6 +17,8 @@
     "fs-plus": "^3.1.1",
     "highlight.js": "^11.9.0",
     "marked": "5.0.3",
+    "node": "^18.20.2",
+    "npm": "^10.5.2",
     "rouge": "^1.0.3",
     "underscore-plus": "^1.0.0",
     "yaml-front-matter": "^4.1.1"
@@ -27,8 +30,7 @@
     "IansasciidocPreviewFrommarkdownpreviewView": "createIansasciidocPreviewFrommarkdownpreviewView"
   },
   "configSchema": {
-    "breakOnSingleNewline": {
-    },
+    "breakOnSingleNewline": {},
     "liveUpdate": {
       "type": "boolean",
       "default": true,
@@ -51,8 +53,7 @@
       ],
       "description": "List of scopes for languages for which previewing is enabled. See [this README](https://github.com/pulsar-edit/spell-check#readme) for more information on finding the correct scope for a specific language."
     },
-    "useGitHubStyle": {
-    },
+    "useGitHubStyle": {},
     "syntaxHighlightingLanguageIdentifier": {
       "description": "Syntax Highlighting System to use for code block language identification. See [the README](https://github.com/pulsar-edit/pulsar/tree/master/packages/iansasciidoc-preview-frommarkdownpreview#readme) for details.",
       "type": "string",
