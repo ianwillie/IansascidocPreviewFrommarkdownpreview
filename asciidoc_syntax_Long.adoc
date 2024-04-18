@@ -6,7 +6,8 @@
 :doctype: book
 //:url-docs: https://asciidoctor.org/docs
 //:url-gem: https://rubygems.org/gems/asciidoctor
-:source-highlighter: highlight.js
+//:source-highlighter: highlight.js
+:source-highlighter: rouge
 :styledir: tempZ
 :stylesheet: asciidoctor.css
 
@@ -25,7 +26,7 @@ backtick then plus gives monospaced
 require 'sinatra'
 
 get '/hi' do
-  "Hello World"
+  "Hello World using rouge"
 end
 ----
 
@@ -360,7 +361,7 @@ image::/media/AcerWinData/PhotosEpson/aaaaaaaDCIM/DCIM/XXXTestDigikamFromNikonS9
 
 Press image:reload.svg[reload,16,opts=interactive] to reload the page.
 
-video::/home/ian/Downloads/IMG_1420.mp4[width=640,start=60,end=140,options=autoplay]
+video::/home/ian/Downloads/colorsync-3dplot.mp4[width=160,start=60,end=140,options=autoplay]
 
 video::aHjpOzsQ9YI[youtube]
 

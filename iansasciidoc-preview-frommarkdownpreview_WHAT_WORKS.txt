@@ -39,7 +39,7 @@ TEST
 
 ####################  highlighting ptoblem in preview but OK in browser ###########
 Maybe clue here:https://stackoverflow.com/questions/63115206/highlight-js-doesnt-highlight-on-markup-load-from-javascript-event
-https://github.com/asciidoctor/asciidoctor/issues/1900   YES 
+https://github.com/asciidoctor/asciidoctor/issues/1900   YES
 
 <code class="language-ruby hljs" data-lang="ruby">require 'sinatra'
 
@@ -55,6 +55,13 @@ if (!hljs.initHighlighting.called) {
   ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
 }
 </script>
+
+Rouge: the link above suggests that rouge should function OK. Hoever, the saved html opens in browser wi highlighting as it should be, but none appears in the pulsar preview.Not sure why yet.NB Rouge has be be installed as a gem called asciidoctor-rouge (or similar). There is no script as wi highlight.js so Rouge seems to be the one to explore.
+
+NBNB  I thinkthe above held for pulsar v115. After upgrade to v116 (20240416) I think that saveAsHTML does not show code highlighting. ??Does asciidoctor-rouge need to be reinstalled or something else.
+
+Pygments & Coderay - nothing in pulsar preview & also not in browser wi save as html. They both do not work at all.
+
 
 For github pulsar https://github.com/pulsar-edit/pulsar/issues/256  ###################################################  20240408
 @confused-Techie .
