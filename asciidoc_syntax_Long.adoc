@@ -12,7 +12,7 @@
 :stylesheet: asciidoctor.css
 
 
-== AsciiDoc Syntax 9999999999999999888777666
+== AsciiDoc Syntax 9999999999999999888777
 
 THis is a very long line to test the horizontal width & scroll so that we can see just where the pane ends at the bottom cos there ought to be a scroll bar there I think. However, it may be necessary to have a line wi not blanks in it we will see when we test it now.
 backtick then plus gives monospaced
@@ -153,7 +153,7 @@ link:../media/AcerWinData/github_from_home/CloneOfianasciidocpreview-active-edit
 link:atom://core/open/file?filename="/home/ian/websites/atom.io_FLightManual1.57Fromatom-flight-manual-archive.github.io/atom-flight-manual-archive.github.io/index.html"[A local file atom flight manual]
 link:atom://core/open/file?filename="/media/AcerWinData/github_from_home/CloneOfianasciidocpreview-active-editor-info-20230915_ChromeZoomWiTransformFactorInFile/TEST_textfile.txt"[A local file TEST_textfile.txt wi full path]
 link:atom://core/open/file?filename="TEST_textfile.txt"[A local file TEST_textfile.txt wi just filename. Open unknownfile]
-xref:document.adoc[A sibling document]
+xref:asciidoc_syntax_VShort.adoc[A sibling document]
 mailto:hello@example.org[Email to say hello!]
 
 == Anchors

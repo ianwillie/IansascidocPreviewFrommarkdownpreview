@@ -10,7 +10,7 @@ let renderer = null
 let cheerio = null
 let yamlFrontMatter = null
 
-let isAsciidoctor = false; //true; //true   //false
+let isAsciidoctor = true; //false; //true; //true   //false
 
 const { scopeForFenceName } = require('./extension-helper')
 const { resourcePath } = atom.getLoadSettings()
@@ -29,8 +29,7 @@ exports.toDOMFragment = async function (text, filePath, grammar, callback) {
   const domFragment = render(text, filePath)
 
   // ianschange
-  //if (!isAsciidoctor) { await highlightCodeBlocks(domFragment, grammar, makeAtomEditorNonInteractive) };
-  await highlightCodeBlocks(domFragment, grammar, makeAtomEditorNonInteractive)
+  if (!isAsciidoctor) { await highlightCodeBlocks(domFragment, grammar, makeAtomEditorNonInteractive) };
 
   return domFragment
 }
@@ -48,8 +47,7 @@ exports.toHTML = async function (text, filePath, grammar) {
   document.body.appendChild(div)
   //
   // // ianschange
-  //if (!isAsciidoctor) { await highlightCodeBlocks(div, grammar, convertAtomEditorToStandardElement) };
-  await highlightCodeBlocks(div, grammar, convertAtomEditorToStandardElement)
+  if (!isAsciidoctor) { await highlightCodeBlocks(div, grammar, convertAtomEditorToStandardElement) };
   //
   const result = div.innerHTML
   div.remove()
@@ -58,10 +56,9 @@ exports.toHTML = async function (text, filePath, grammar) {
 } //END exports.toHTML
 
 //let htmloutputStandalone = Asciidoctor.convert(asciidocInputFromEditor_words, {   'standalone': true,  'attributes': { 'linkcss': true ,}});
+var render =  function (text, filePath) {
 
-
-var renderAsciidoctor =  function (text, filePath) {
-
+  if (isAsciidoctor) {
     const Asciidoctor = require('asciidoctor')();
     let textToHTML = '';
     //textToHTML = Asciidoctor.convert(text, {'safe': 'server'} );
@@ -75,19 +72,9 @@ var renderAsciidoctor =  function (text, filePath) {
      console.log(`ianschange <li> textToHTML >/li> = \n <li> ${textToHTML}</li>\n `);
      //return `<li> ${text}</li>\n`;
      html = textToHTML;
-     /* ianschange removing template seems to make no difference */
-     const template = document.createElement('template')
-     template.innerHTML = html.trim()
-     // If deep= true, node and its whole subtree, including text that may be in child Text nodes, is also copied.
-     const fragment = template.content.cloneNode(true)
-
-     //if (!isAsciidoctor) {resolveImagePaths(fragment, filePath) };// ianscomment seems to have no effect
-
-     return fragment
-  } //END renderAsciidoctor
-
-var render = function (text, filePath) {
-
+  }
+ else {
+  // ianschange render commented out & new version inserted
   //var render = function (text, filePath) {
     if (marked == null || yamlFrontMatter == null || cheerio == null) {
       marked = require('marked')
@@ -129,23 +116,18 @@ var render = function (text, filePath) {
       )
     })
    //}
-
+ }
   /* ianschange removing template seems to make no difference */
   const template = document.createElement('template')
   template.innerHTML = html.trim()
   // If deep= true, node and its whole subtree, including text that may be in child Text nodes, is also copied.
   const fragment = template.content.cloneNode(true)
 
-  //if (!isAsciidoctor) {resolveImagePaths(fragment, filePath) };// ianscomment seems to have no effect
-  resolveImagePaths(fragment, filePath)
+  if (!isAsciidoctor) {resolveImagePaths(fragment, filePath) };// ianscomment seems to have no effect
 
-  if (isAsciidoctor) { return renderAsciidoctor (text, filePath) }
-  else { return fragment };
+  return fragment
+} //END render
 
-  //return fragment
-} //END render for MD
-
-//function render(text, filePath) {   renderMD (text, filePath) };
 
 function renderYamlTable (variables) {
   const entries = Object.entries(variables)
