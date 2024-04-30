@@ -10,7 +10,7 @@ let renderer = null
 let cheerio = null
 let yamlFrontMatter = null
 
-export const  isAsciidoctor = false; //true; //true   //false
+let isAsciidoctor = false; //true; //true   //false
 
 const { scopeForFenceName } = require('./extension-helper')
 const { resourcePath } = atom.getLoadSettings()
@@ -87,6 +87,8 @@ var renderAsciidoctor =  function (text, filePath) {
   } //END renderAsciidoctor
 
 var render = function (text, filePath) {
+
+  //var render = function (text, filePath) {
     if (marked == null || yamlFrontMatter == null || cheerio == null) {
       marked = require('marked')
       yamlFrontMatter = require('yaml-front-matter')
@@ -137,9 +139,10 @@ var render = function (text, filePath) {
   //if (!isAsciidoctor) {resolveImagePaths(fragment, filePath) };// ianscomment seems to have no effect
   resolveImagePaths(fragment, filePath)
 
-  // NB the following does not seem to save html if "else {return fragment }" is used.
-  if (isAsciidoctor) { return renderAsciidoctor (text, filePath) } ;
-  return fragment  // NB TESTING TESTING only: line above is correct one T
+  if (isAsciidoctor) { return renderAsciidoctor (text, filePath) }
+  else { return fragment };
+
+  //return fragment
 } //END render for MD
 
 //function render(text, filePath) {   renderMD (text, filePath) };
