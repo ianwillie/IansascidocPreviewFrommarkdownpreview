@@ -1,6 +1,23 @@
 iansasciidoc-preview-frommarkdownpreview_WHAT_WORKS.txt
 
-What does NOT:
+### What WORKS 20240429
+for 856c3545fa454c01102b04299dc4d077a4387939
+
+## Commit message
+isAsciidoctor put in renderAsciidoctor inside lib/renderer.js/render. Now runs asoc or md depending on isAsiidoctor
+
+Bits removed for original version that only ran asoc but not MD not added back one by one to check that adoc works.
+saveAsHTML now workds for both MD & Adoc.  Adoc gets correct css file,. MD seems to get correct css but I think that I need to look at languate-ids/ & assets/ which were changed for adoc only version.
+copy to clipboard as HTML works for MD but will NOT WORK for Ad without a new funcion, I surmise.
+parent 2bb3be69ff7d6fda377b49decded3f51e1b71e19
+
+Much more works that did in the adoc only version described below. In that version eveything that did not seem to be needed was commented out. In this new version these have been reinstated, or if (isAsiidoctor) else to choose which code to run based on value isAsciidoctor which is at top of renderer.js exported & imported into ...view only at the moment.
+
+Work needs to be done on .css because these were removed and only what seemed to be needed for adoc was left or added. I dont think much was left. There was a lot relating to github-md which seems to be present in saveAsHTML.
+
+
+
+### What does NOT: adoc only version
  local crossreferences #mytarget
     but do not work in MdPreview
     works in external browser
