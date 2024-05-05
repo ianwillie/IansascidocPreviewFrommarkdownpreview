@@ -32,6 +32,11 @@
     "IansasciidocPreviewFrommarkdownpreviewView": "createIansasciidocPreviewFrommarkdownpreviewView"
   },
   "configSchema": {
+    "isAsciidoctor": {
+      "type": "boolean",
+      "default": false,
+      "description": "Preview as Asciidoctor: true/false."
+    },
     "breakOnSingleNewline": {},
     "liveUpdate": {
       "type": "boolean",
@@ -78,6 +83,8 @@
           "description": "HighlightJS: Markdown-IT"
         }
       ]
+    },
+    "syntaxHighlightingLanguageIdentifier_REMOVED": { 
     },
     "customSyntaxHighlightingLanguageIdentifiers": {
       "description": "Custom comma seperated list of Syntax Language Identifiers to map to any language. See [the README](https://github.com/pulsar-edit/pulsar/tree/master/packages/iansasciidoc-preview-frommarkdownpreview#readme) for usage.",
