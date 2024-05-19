@@ -1,0 +1,71 @@
+.
+├── --
+├── asciidoctor.css
+├── assets
+│   ├── asciidoctor.cssORIG
+│   ├── hr.png
+│   └── primer-markdown.lessORIG
+├── IansascidocPreviewFrommarkdownpreview_documentation.txt
+├── IansasciidocPreviewFromMarkdownPreview_Settings_Screenshot_2024-03-24_18-16-05.png
+├── iansasciidoc-preview-frommarkdownpreview_WHAT_WORKS.txt
+├── keymaps
+│   └── iansasciidoc-preview-frommarkdownpreview.cson
+├── lib
+│   ├── extension-helper.js
+│   ├── iansasciidoc-preview-frommarkdownpreview-view.js
+│   ├── iansasciidoc-preview-frommarkdownpreview-view.jsFromMain.js
+│   ├── language-ids
+│   │   ├── chroma.js
+│   │   ├── highlightjs.js
+│   │   ├── linguist.js
+│   │   └── rouge.js
+│   ├── main.js
+│   ├── renderer.js
+│   ├── renderer.js202404291751
+│   ├── renderer.jsFromMain.js
+│   └── renderer.jsORIG
+├── MarkdownPreview_Settings_Screenshot_2024-03-24_18-16-05.png
+├── menus
+│   └── iansasciidoc-preview-frommarkdownpreview.cson
+├── package.json
+├── package.jsonORIGINAL
+├── package-lock.json
+├── README.md
+├── spec
+│   ├── fixtures
+│   │   └── subdir
+│   │       ├── áccéntéd.md
+│   │       ├── code-block.md
+│   │       ├── doctype-tag.md
+│   │       ├── evil.md
+│   │       ├── file.markdown
+│   │       ├── file with space.md
+│   │       ├── html-tag.md
+│   │       ├── pre-tag.md
+│   │       └── simple.md
+│   ├── iansasciidoc-preview-frommarkdownpreview-spec.js
+│   └── iansasciidoc-preview-frommarkdownpreview-view-spec.js
+├── styles
+│   ├── asciidoctor.css.ORIG
+│   ├── iansasciidoc-preview-frommarkdownpreview-default.less
+│   ├── iansasciidoc-preview-frommarkdownpreview-default.lessORIG
+│   ├── iansasciidoc-preview-frommarkdownpreview-github.lessORIG
+│   └── iansasciidoc-preview-frommarkdownpreview.lessORIG
+├── TEST_Adoc_MD_Files_Etc
+│   ├── asciidoc_syntax_highlightingTEST_coderay.adoc
+│   ├── asciidoc_syntax_highlightingTESTHighlightJs.adoc
+│   ├── asciidoc_syntax_highlightingTEST_pygments.adoc
+│   ├── asciidoc_syntax_highlightingTESTRouge0.adoc.md
+│   ├── asciidoc_syntax_highlightingTESTRouge.adoc
+│   ├── asciidoc_syntax_Long0.adocORIG
+│   ├── asciidoc_syntax_Long.adoc
+│   ├── asciidoc_syntax_VShort.adoc
+│   ├── asciidoc_syntax_VShort.adoc.html
+│   ├── asciidoc_syntax_VShort.adoct
+│   ├── asciidoc_VShort_CSSExplore.adoc
+│   ├── asciidoc_VShort_CSSExplore.adoc.html
+│   ├── README_SHORT.md
+│   └── README_SHORT.md.html
+└── tree_DIR.txt
+
+11 directories, 58 files

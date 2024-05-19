@@ -61,6 +61,16 @@
       "description": "List of scopes for languages for which previewing is enabled. See [this README](https://github.com/pulsar-edit/spell-check#readme) for more information on finding the correct scope for a specific language."
     },
     "useGitHubStyle": {},
+      "//title": "Use GitHub.com style",
+      "//type": "boolean",
+      "//default": false,
+      "//description": "Use the same CSS styles for preview as the ones used on GitHub.com.",
+    "//": "This is a comment",
+    "//": "This is a second comment",
+    "Comments": [
+        "First comment,",
+        "Second comment"
+    ],
     "syntaxHighlightingLanguageIdentifier": {
       "description": "Syntax Highlighting System to use for code block language identification. See [the README](https://github.com/pulsar-edit/pulsar/tree/master/packages/iansasciidoc-preview-frommarkdownpreview#readme) for details.",
       "type": "string",
@@ -84,7 +94,7 @@
         }
       ]
     },
-    "syntaxHighlightingLanguageIdentifier_REMOVED": { 
+    "syntaxHighlightingLanguageIdentifier_REMOVED": {
     },
     "customSyntaxHighlightingLanguageIdentifiers": {
       "description": "Custom comma seperated list of Syntax Language Identifiers to map to any language. See [the README](https://github.com/pulsar-edit/pulsar/tree/master/packages/iansasciidoc-preview-frommarkdownpreview#readme) for usage.",
