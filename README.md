@@ -1,4 +1,22 @@
-# Markdown Preview package
+# IansascidocPreviewFrommarkdownpreview
+altered version of Pulsar markdown-preview package that will reconise and prewview asciidoctor .adoc files.
+
+To preview a file with cursor in .md or .adoc file press:
+  <kbd>ctrl-alt-shift-m</kbd>  - an extra alt key.
+(If the official pulsar mardown-preview package is enabled then ctrl-shift-m  no alt, will call it.)
+
+What WORKS:
+preview of all markdown files but in addition  & files with asciidoctor files with .adoc extension are previewed.
+Preview is synced to editor changes depending on setting-up.
+
+What does NOT WORK:
+Preview of <kbd> </kbd> - 
+
+
+
+
+
+# Markdown Preview package ORIGINAL Pulsar version README.md:
 
 Show the rendered HTML markdown to the right of the current editor using <kbd>ctrl-shift-m</kbd>.
 
